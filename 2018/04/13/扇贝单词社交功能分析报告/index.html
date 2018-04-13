@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="PM, Gruntjs, Nodejs, Reactjs, Vuejs"><title>扇贝单词社交功能分析报告 - 啥都想皮一下_(:з」∠)_</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><input id="navi" type="checkbox"><ul class="main-navication"><li><a href="/"><span>Home</span></a></li><li><a href="https://github.com/yangsurui"><span>Github</span></a></li><li><a href="https://www.jianshu.com/u/9f69da21e3ef"><span>简书</span></a></li></ul><div class="wrapper" id="wrap"><div class="post-header"><label class="navi-button light" for="navi">MENU</label><img class="background" src="http://callfiles.ueibo.com/hexo-theme-laughing/post_background.jpg"><div class="post-title"><h1 class="title">扇贝单词社交功能分析报告</h1><ul class="meta"><li><i class="icon icon-author"></i>Syria</li><li><i class="icon icon-clock"></i>8 Minutes</li><li><i class="icon icon-calendar"></i>April 13, 2018</li></ul></div></div><div class="article-content" style="max-width:1000px"><h2 id="分析目的"><a href="#分析目的" class="headerlink" title="分析目的"></a>分析目的</h2><p>学习与社交、娱乐相结合是目前移动学习类应用产品普遍推行的一种模式。对于大多数人而言，学习本身就是一件枯燥乏味的事情，但试想如果能够在学习的过程中融入比赛、竞争类的小游戏；提供与他人交流和分享的机会……这样的学习似乎也不再无趣。因此将这三者有机结合，在一定程度上，可以增加学习的趣味性，从而充分发挥学习者的主观能动性，提高学习效率，达到事半功倍的效果。<br>本文选取“百词斩”作为竞品，针对两者的社交相关功能模块进行对比分析，提出一些产品的改进建议，希望能够为产品研发者们提供一些参考意见。</p>
+<h2 id="选择模块"><a href="#选择模块" class="headerlink" title="选择模块"></a>选择模块</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">扇贝单词</th>
+<th style="text-align:center">百词斩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">自习室</td>
+<td style="text-align:center">兴趣圈</td>
+</tr>
+<tr>
+<td style="text-align:center">同桌</td>
+<td style="text-align:center">–</td>
+</tr>
+<tr>
+<td style="text-align:center">小组</td>
+<td style="text-align:center">小班</td>
+</tr>
+<tr>
+<td style="text-align:center">–</td>
+<td style="text-align:center">单词量对战</td>
+</tr>
+</tbody>
+</table>
+<h3 id="自习室"><a href="#自习室" class="headerlink" title="自习室"></a>自习室</h3><h4 id="功能概述"><a href="#功能概述" class="headerlink" title="功能概述"></a>功能概述</h4><p>扇贝将现实生活中存在的“自习室”搬到了APP中。自习室的首页是专属于“我”的一个小空间，刷一刷好友发表的文章，有的记录日常打卡，有的分享刚看完的电影观后感……给“我”的小伙伴们点个赞。<br>世界那么大“我”还想去别处瞧一瞧，热门模块显示即时的热门标签和热门文章，原来其他人都在讨论这些话题啊，他/她也看过××电影，影评写的好棒，加个好友吧。</p>
+<h4 id="功能结构"><a href="#功能结构" class="headerlink" title="功能结构"></a>功能结构</h4><p><img src="https://upload-images.jianshu.io/upload_images/5840883-e840633e82e278e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扇贝单词"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5840883-62f0ebdd76bbef4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="百词斩"></p>
+<h4 id="功能比较"><a href="#功能比较" class="headerlink" title="功能比较"></a>功能比较</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">功能</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">扇贝单词</th>
+<th style="text-align:center">百词斩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">动态</td>
+<td style="text-align:center">基本功能</td>
+<td style="text-align:center">创建文章</td>
+<td style="text-align:center">发表话题</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">用户操作</td>
+<td style="text-align:center">转发/评论/点赞/分享/收藏/举报/编辑</td>
+<td style="text-align:center">评论/点赞/分享</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">内容限制</td>
+<td style="text-align:center">无规定，可自行添加标签</td>
+<td style="text-align:center">属于所选圈子分类话题</td>
+</tr>
+<tr>
+<td style="text-align:center">热门推荐</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">热门标签/热门文章/搜索</td>
+<td style="text-align:center">热门话题</td>
+</tr>
+</tbody>
+</table>
+<h4 id="亮点"><a href="#亮点" class="headerlink" title="亮点"></a>亮点</h4><ol>
+<li>扇贝对于用户可发表内容没有非常严格的限制，赋予用户更多的自主性</li>
+<li>用户操作更加多样化，与用户共同构建和谐的自习室</li>
+</ol>
+<h4 id="改进建议"><a href="#改进建议" class="headerlink" title="改进建议"></a>改进建议</h4><ol>
+<li>对于热门内容的推荐，可以进一步细化，如根据用户定位，推荐所在地区的热门文章</li>
+<li>对于用户评论，可以增加他人点赞，优先排序等功能</li>
+</ol>
+<h3 id="同桌"><a href="#同桌" class="headerlink" title="同桌"></a>同桌</h3><h4 id="功能概述-1"><a href="#功能概述-1" class="headerlink" title="功能概述"></a>功能概述</h4><p>扇贝推出同桌模式的可以简单概括为“陪伴”二字。背单词没动力？来找个同桌一起学吧！先确定好期望成为同桌的天数，为了方便联系同桌，再关联一下微信公众号。有熟人？直接搜索他/她的昵称。不知道找谁？那直接在下方的列表里挑选，都是扇贝根据期望成为同桌的天数筛选出来的。对方确认后，就开始一起学习吧！</p>
+<h4 id="功能结构-1"><a href="#功能结构-1" class="headerlink" title="功能结构"></a>功能结构</h4><p><img src="https://upload-images.jianshu.io/upload_images/5840883-9559c48ae28957b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扇贝单词"></p>
+<h4 id="亮点-1"><a href="#亮点-1" class="headerlink" title="亮点"></a>亮点</h4><ol>
+<li>采用一对一学习模式，强调陪伴学习的理念</li>
+</ol>
+<h4 id="改进建议-1"><a href="#改进建议-1" class="headerlink" title="改进建议"></a>改进建议</h4><ol>
+<li>对于关联微信公众号，可以在用户找同桌的过程中给予适量引导和推荐，这一步操作，用户可以选择跳过不设置</li>
+<li>对于学习的内容，可以扩展到的其他产品，比如听力材料</li>
+<li>对于推荐的同桌，除了时间上的基本匹配外，可以增加地区、学校、学习内容等多方面匹配项，用户也可以自定义匹配条件，同时还可以增加自动匹配功能</li>
+<li>参考百词斩的单词量PK，可以增加同桌之间的一些互动PK功能</li>
+</ol>
+<h3 id="小组"><a href="#小组" class="headerlink" title="小组"></a>小组</h3><h4 id="功能概述-2"><a href="#功能概述-2" class="headerlink" title="功能概述"></a>功能概述</h4><p>扇贝的小组模式可以视为升级版的同桌模式，因为不再是1对1而是1对n的模式。目前的小组按照私密性分为两种，一种是公开小组（陌生人社交），另一种是私密小组（熟人社交）。<br>在小组里，学习是你一个人的事，你完成自己设置的任务就好；在小组里，学习也不是你一个人的事，如果你当天没有完成自己的任务，你和你所在小班的打卡率就会下降。你也可以在讨论区中围观同组各路大神的日常打卡记录，参与小组活动，与大神们并肩作战。</p>
+<h4 id="功能结构-2"><a href="#功能结构-2" class="headerlink" title="功能结构"></a>功能结构</h4><p><img src="https://upload-images.jianshu.io/upload_images/5840883-f6f403bf13cf665a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扇贝单词"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5840883-38c964bea57564c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="百词斩"></p>
+<h4 id="功能比较-1"><a href="#功能比较-1" class="headerlink" title="功能比较"></a>功能比较</h4><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">扇贝单词</th>
+<th style="text-align:center">百词斩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">名称</td>
+<td style="text-align:center">小组</td>
+<td style="text-align:center">小班</td>
+</tr>
+<tr>
+<td style="text-align:center">属性</td>
+<td style="text-align:center">公开/私密</td>
+<td style="text-align:center">私密</td>
+</tr>
+<tr>
+<td style="text-align:center">创建条件</td>
+<td style="text-align:center">完成对应要求的打卡天数</td>
+<td style="text-align:center">完成官方限定活动</td>
+</tr>
+<tr>
+<td style="text-align:center">加入条件</td>
+<td style="text-align:center">无限制（除组长设置外）</td>
+<td style="text-align:center">无限制（除班长设置外）</td>
+</tr>
+<tr>
+<td style="text-align:center">主要功能</td>
+<td style="text-align:center">完成每日打卡任务，保证小组打卡率</td>
+<td style="text-align:center">完成每日打卡任务，保证小组打卡率</td>
+</tr>
+<tr>
+<td style="text-align:center">附属功能</td>
+<td style="text-align:center">小组讨论区、小组分类推荐、小组活动推荐</td>
+<td style="text-align:center">成长日记、微信提醒、小班成员打卡详情、小组推荐</td>
+</tr>
+</tbody>
+</table>
+<h4 id="亮点-2"><a href="#亮点-2" class="headerlink" title="亮点"></a>亮点</h4><ol>
+<li>小组组长的质量有保障，可创建小组的用户必须达到规定的打卡天数</li>
+<li>创建小组的属性可选，熟人/陌生人社交需求都可以满足</li>
+<li>小组首页分类推荐，快速加入感兴趣的小组</li>
+</ol>
+<h4 id="改进建议-2"><a href="#改进建议-2" class="headerlink" title="改进建议"></a>改进建议</h4><ol>
+<li>对于小组成员的打卡情况，可以在小组嵌入一个模块以图表的形式展示出来，展示的内容可以是打卡第几天，单词数量。图表和数据更直观，对用户来说会有很好的激励作用</li>
+<li>增加小组的奖励机制，如排名靠前的小组可以给予贝壳奖励，限定时间内完成官方发布活动任务的小组可以获得贝壳奖励等</li>
+</ol>
+<h3 id="竞品功能——单词量PK"><a href="#竞品功能——单词量PK" class="headerlink" title="竞品功能——单词量PK"></a>竞品功能——单词量PK</h3><h4 id="功能概述-3"><a href="#功能概述-3" class="headerlink" title="功能概述"></a>功能概述</h4><p>不如换一种新方法复习背过的单词吧！从你和你的对手背过的单词中，随机选取10个单词，看谁答得又好又快！<br><img src="https://upload-images.jianshu.io/upload_images/5840883-b5e9b47eedc4a9d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="“随机约”功能流程示意"></p>
+<h4 id="亮点-3"><a href="#亮点-3" class="headerlink" title="亮点"></a>亮点</h4><ol>
+<li>随机约、附近的人约、好友挑战，赋予用户更多的自主选择权</li>
+<li>通过与他人对战模式的复习单词，趣味性十足，同样也能达到快速复习的效果</li>
+</ol>
+<h4 id="改进建议-3"><a href="#改进建议-3" class="headerlink" title="改进建议"></a>改进建议</h4><ol>
+<li>对于在PK过程中答错的单词，可以自动加入用户第二天要学习/复习的内容中</li>
+<li>对于“还要约TA”功能，在随机约战模块的流程有待优化</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="扇贝单词社交功能的亮点"><a href="#扇贝单词社交功能的亮点" class="headerlink" title="扇贝单词社交功能的亮点"></a>扇贝单词社交功能的亮点</h4><ol>
+<li>同桌模式的“陪伴”理念</li>
+<li>更倾向于引导用户开展以学习为目的的社交</li>
+<li>创建小组的属性可选，熟人/陌生人社交需求都可以满足</li>
+</ol>
+<h4 id="百词斩社交功能的亮点"><a href="#百词斩社交功能的亮点" class="headerlink" title="百词斩社交功能的亮点"></a>百词斩社交功能的亮点</h4><ol>
+<li>对于不同类型的社交有更明确的划分</li>
+<li>学习与社交的结合形式更加多样有趣</li>
+</ol>
+<h4 id="改进建议-4"><a href="#改进建议-4" class="headerlink" title="改进建议"></a>改进建议</h4><h5 id="自习室-1"><a href="#自习室-1" class="headerlink" title="自习室"></a>自习室</h5><ol>
+<li>对于热门内容的推荐，可以进一步细化，如根据用户定位，推荐所在地区的热门文章</li>
+<li>对于用户评论，可以增加他人点赞，优先排序等功能</li>
+</ol>
+<h5 id="同桌-1"><a href="#同桌-1" class="headerlink" title="同桌"></a>同桌</h5><ol>
+<li>对于关联微信公众号，可以在用户找同桌的过程中给予适量引导和推荐，这一步操作用户可以选择跳过不设置</li>
+<li>对于学习的内容，可以扩展到的其他产品，比如听力材料</li>
+<li>对于推荐的同桌，除了时间上的基本匹配外，可以增加地区、学校、学习内容等方面的匹配项，用户也可以自定义匹配条件，同时还可以增加自动匹配功能</li>
+<li>参考百词斩的单词量PK，可以增加同桌之间的一些互动PK功能</li>
+</ol>
+<h5 id="小组-1"><a href="#小组-1" class="headerlink" title="小组"></a>小组</h5><ol>
+<li>对于小组成员的打卡情况，可以在小组嵌入一个模块以图表的形式展示出来，展示的内容可以是打卡第几天，单词数量。图表和数据更直观，对用户来说会有很好的激励作用</li>
+<li>增加小组的奖励机制，如排名靠前的小组可以给予贝壳奖励，限定时间内完成官方发布活动任务的小组可以获得贝壳奖励等</li>
+</ol>
+</div><div class="article-meta" style="max-width:1000px"></div><div class="article-comment" style="max-width:1000px"><div class="ds-thread" id="ds-thread" data-thread-key="cjfxvzusv0001apqs3okxcdxr" data-title="扇贝单词社交功能分析报告" data-url="http://yoursite.com/2018/04/13/扇贝单词社交功能分析报告/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+var duoshuoQuery = {short_name: siteName};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/11/30/扇贝阅读移动端产品分析报告/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/BoizZ" title="Github" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="https://weibo.com/heqibang" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2018 啥都想皮一下_(:з」∠)_</p></div></div></div><script>var wrap = document.getElementById('wrap');
+window.onload = function () {
+  wrap.className += ' done';
+}</script></body></html>
